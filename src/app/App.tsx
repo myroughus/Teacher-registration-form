@@ -2,7 +2,7 @@ import { TeacherApplicationForm } from './components/TeacherApplicationForm';
 
 export default function App() {
   return (
-    <div className="min-h-screen relative" style={{ backgroundColor: '#030508' }}>
+    <div className="min-h-screen relative" style={{ backgroundColor: '#0b0b0b' }}>
       {/* Deep ambient gold gradients */}
       <div
         className="fixed inset-0 pointer-events-none"

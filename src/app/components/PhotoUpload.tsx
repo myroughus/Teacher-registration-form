@@ -39,7 +39,7 @@ export function PhotoUpload({ onUpload }: PhotoUploadProps) {
         <div className="relative">
           <div data-required-target
             style={{
-              width: '90px', height: '90px', background: '#0A0F1A',
+              width: '90px', height: '90px', background: '#111111',
               border: '1px dashed rgba(201,169,110,0.2)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               overflow: 'hidden', cursor: 'pointer',

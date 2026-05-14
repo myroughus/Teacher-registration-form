@@ -39,7 +39,7 @@ export function Checkbox({
   return (
     <label 
       data-required-target
-      className={`flex items-start gap-3 p-4 bg-[#0A0F1A] border border-[rgba(201,169,110,0.08)] cursor-pointer transition-all hover:border-[rgba(201,169,110,0.3)] hover:bg-[#0C1119] ${isChecked ? 'border-[rgba(201,169,110,0.35)] bg-[rgba(201,169,110,0.04)]' : ''} ${className}`}
+      className={`flex items-start gap-3 p-4 bg-[#111111] border border-[rgba(201,169,110,0.08)] cursor-pointer transition-all hover:border-[rgba(201,169,110,0.3)] hover:bg-[#161616] ${isChecked ? 'border-[rgba(201,169,110,0.35)] bg-[rgba(201,169,110,0.04)]' : ''} ${className}`}
     >
       <div className="relative flex-shrink-0 mt-0.5">
         <input
@@ -55,12 +55,12 @@ export function Checkbox({
           className={`w-5 h-5 rounded-sm border transition-all duration-200 flex items-center justify-center
             ${isChecked 
               ? 'bg-[#C9A96E] border-[#C9A96E] shadow-[0_0_10px_rgba(201,169,110,0.25)]' 
-              : 'bg-[#080D14] border-[rgba(201,169,110,0.18)] peer-hover:border-[rgba(201,169,110,0.4)]'
+              : 'bg-[#0b0b0b] border-[rgba(201,169,110,0.18)] peer-hover:border-[rgba(201,169,110,0.4)]'
             }`}
         >
           {isChecked && (
             <svg 
-              className="w-3 h-3 text-[#030508]" 
+              className="w-3 h-3 text-[#0b0b0b]" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ export function CheckboxGroup({ options, selected, onChange, columns = 4 }: Chec
             className={`flex items-center gap-2 p-2.5 rounded cursor-pointer transition-all border
               ${isSelected 
                 ? 'bg-[rgba(201,169,110,0.07)] border-[rgba(201,169,110,0.35)]' 
-                : 'bg-[#0A0F1A] border-[rgba(201,169,110,0.08)] hover:border-[rgba(201,169,110,0.28)]'
+                : 'bg-[#111111] border-[rgba(201,169,110,0.08)] hover:border-[rgba(201,169,110,0.28)]'
               }`}
           >
             <div className="relative flex-shrink-0">
@@ -138,11 +138,11 @@ export function CheckboxGroup({ options, selected, onChange, columns = 4 }: Chec
                 className={`w-4 h-4 rounded border transition-all duration-200 flex items-center justify-center
                   ${isSelected 
                     ? 'bg-[#C9A96E] border-[#C9A96E]' 
-                    : 'bg-[#080D14] border-[rgba(201,169,110,0.15)] peer-hover:border-[rgba(201,169,110,0.4)]'
+                    : 'bg-[#0b0b0b] border-[rgba(201,169,110,0.15)] peer-hover:border-[rgba(201,169,110,0.4)]'
                   }`}
               >
                 {isSelected && (
-                  <svg className="w-2.5 h-2.5 text-[#030508]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-2.5 h-2.5 text-[#0b0b0b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 )}

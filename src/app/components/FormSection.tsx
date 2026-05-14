@@ -15,7 +15,7 @@ export function FormSection({ title, icon, children }: FormSectionProps) {
       background: 'linear-gradient(135deg, rgba(201,169,110,0.18) 0%, rgba(201,169,110,0.04) 40%, rgba(20,28,45,0.6) 100%)',
     }}>
       <div style={{
-        background: 'linear-gradient(180deg, #0C1119 0%, #080D14 100%)',
+        background: 'linear-gradient(180deg, #111111 0%, #0b0b0b 100%)',
         borderRadius: '1px',
         padding: '28px 32px',
       }}>

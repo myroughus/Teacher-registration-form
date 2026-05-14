@@ -9,7 +9,7 @@ export function SuccessScreen() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-16" style={{ background: '#030508' }}>
+    <div className="min-h-screen flex items-center justify-center px-4 py-16" style={{ background: '#0b0b0b' }}>
       <div className="max-w-[580px] w-full">
 
         {/* Ornamental header */}
@@ -50,11 +50,11 @@ export function SuccessScreen() {
         {/* Card */}
         <div style={{
           padding: '1px', borderRadius: '2px',
-          background: 'linear-gradient(135deg, rgba(201,169,110,0.2) 0%, rgba(201,169,110,0.04) 40%, rgba(16,22,36,0.6) 100%)',
+          background: 'linear-gradient(135deg, rgba(201,169,110,0.2) 0%, rgba(201,169,110,0.04) 40%, rgba(10,10,10,0.6) 100%)',
           boxShadow: '0 32px 80px rgba(0,0,0,0.7)',
         }}>
           <div style={{ height: '1px', background: 'linear-gradient(90deg, #C9A96E, rgba(201,169,110,0.2) 60%, transparent)' }} />
-          <div style={{ background: '#0C1119', borderRadius: '0 0 1px 1px', padding: '36px 40px' }}>
+          <div style={{ background: '#111111', borderRadius: '0 0 1px 1px', padding: '36px 40px' }}>
 
             <p style={{
               fontSize: '13px', color: '#4A4030', lineHeight: 1.9, textAlign: 'center',
@@ -123,7 +123,7 @@ export function SuccessScreen() {
                 textTransform: 'uppercase', padding: '12px 24px',
                 background: 'linear-gradient(135deg, #C9A96E 0%, #B8965A 100%)',
                 border: '1px solid rgba(201,169,110,0.4)',
-                color: '#030508', cursor: 'pointer', width: '100%',
+                color: '#0b0b0b', cursor: 'pointer', width: '100%',
                 transition: 'all 0.3s ease', borderRadius: '2px',
               }}>
                 Download Receipt

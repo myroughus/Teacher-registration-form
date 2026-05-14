@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Application Form — Preview (All 10 Steps)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #0b0b0b;
+      --card:   #111111;
+      --surf:   #161616;
+      --gold:   #C9A96E;
+      --gold-d: #B8965A;
+      --gold-l: #D4B77E;
+      --text:   #E8E4DC;
+      --muted:  #6A6660;
+      --faint:  #3A3020;
+      --bdr:    rgba(201,169,110,0.12);
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Cormorant Garamond', Georgia, serif;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* Ambient layers */
+    .amb {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 45% at 15% 0%,   rgba(201,169,110,.055) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 35% at 85% 100%,  rgba(201,169,110,.04)  0%, transparent 60%),
+        radial-gradient(ellipse 35% 25% at 50% 45%,   rgba(201,169,110,.02)  0%, transparent 70%);
+    }
+    .grid-bg {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(201,169,110,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,110,.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* ── Layout ──────────────────────────────────────── */
+    .page {
+      position: relative; z-index: 1;
+      max-width: 740px; margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+
+    /* ── Header ──────────────────────────────────────── */
+    .hdr { text-align: center; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--bdr); }
+    .eyebrow { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 18px; }
+    .el { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,169,110,.4)); }
+    .er { width: 80px; height: 1px; background: linear-gradient(90deg, rgba(201,169,110,.4), transparent); }
+    .et { font-size: 8px; letter-spacing: .28em; text-transform: uppercase; color: #8A7250; font-family: 'DM Mono', monospace; }
+    .ttl {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(28px, 5vw, 44px); font-weight: 700;
+      background: linear-gradient(135deg, #C9A96E, #B8965A);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: .08em; text-transform: uppercase; line-height: 1.15; margin-bottom: 8px;
+    }
+    .sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(13px,2vw,17px); font-weight: 300; font-style: italic;
+      color: var(--gold); letter-spacing: .18em; margin-bottom: 24px;
+    }
+    .dvd { display: flex; align-items: center; gap: 20px; justify-content: center; margin-bottom: 20px; }
+    .dl { flex: 1; max-width: 120px; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,169,110,.25)); }
+    .dr { flex: 1; max-width: 120px; height: 1px; background: linear-gradient(90deg, rgba(201,169,110,.25), transparent); }
+    .dd { width: 5px; height: 5px; transform: rotate(45deg); background: rgba(201,169,110,.4); flex-shrink: 0; }
+    .hdesc { font-size: 13px; color: #4A4030; line-height: 2; max-width: 520px; margin: 0 auto; font-family: 'Cormorant Garamond', Georgia, serif; }
+    .stats { display: flex; justify-content: center; gap: 48px; margin-top: 32px; }
+    .stat { text-align: center; position: relative; }
+    .stat+.stat::before { content:''; position:absolute; left:-24px; top:50%; transform:translateY(-50%); width:1px; height:28px; background:rgba(201,169,110,.1); }
+    .sv { font-size: 20px; font-weight: 300; color: var(--gold); line-height: 1; font-family: 'Cormorant Garamond', Georgia, serif; }
+    .sl { font-size: 8px; color: #3A3020; letter-spacing: .14em; text-transform: uppercase; margin-top: 6px; font-family: 'DM Mono', monospace; }
+
+    /* ── Quick-nav buttons (preview only) ────────────── */
+    .qnav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 24px; }
+    .qb {
+      font-size: 10px; padding: 6px 14px; border-radius: 2px; cursor: pointer;
+      border: 1px solid rgba(201,169,110,.12); background: var(--card);
+      color: #5A5650; font-family: 'DM Mono', monospace; letter-spacing: .06em;
+      transition: all .2s;
+    }
+    .qb:hover, .qb.cur { border-color: rgba(201,169,110,.5); color: var(--gold); background: rgba(201,169,110,.08); }
+
+    /* ── Step Tracker ────────────────────────────────── */
+    .tracker {
+      display: flex; align-items: center; gap: 0; margin-bottom: 28px;
+      padding: 18px 24px; border-radius: 4px; overflow-x: auto; scrollbar-width: none;
+      background: linear-gradient(180deg, #111111 0%, #0b0b0b 100%);
+      border: 1px solid rgba(201,169,110,.12);
+      border-top: 1px solid rgba(201,169,110,.2);
+      box-shadow: 0 12px 48px rgba(0,0,0,.5), inset 0 1px 0 rgba(201,169,110,.06);
+    }
+    .tracker::-webkit-scrollbar { display: none; }
+    .si { display:flex; flex-direction:column; align-items:center; gap:7px; flex-shrink:0; cursor:pointer; }
+    .sc {
+      width:30px; height:30px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:10px; font-weight:600; font-family:'DM Mono',monospace;
+      transition: all .4s;
+    }
+    .sc.done { border:1.5px solid var(--gold); background:linear-gradient(135deg,#C9A96E,#B8965A); color:#0b0b0b; box-shadow:0 2px 10px rgba(201,169,110,.15); }
+    .sc.active { border:1.5px solid rgba(201,169,110,.85); background:rgba(201,169,110,.1); color:var(--gold); box-shadow:0 0 20px rgba(201,169,110,.2); }
+    .sc.pending { border:1.5px solid rgba(201,169,110,.12); background:#111111; color:#3A3830; }
+    .slb { font-size:7.5px; font-weight:500; text-transform:uppercase; letter-spacing:.1em; white-space:nowrap; font-family:'DM Mono',monospace; text-align:center; }
+    .slb.done { color:#6A6450; }
+    .slb.active { color:var(--gold); }
+    .slb.pending { color:#2E2A22; }
+    .conn { flex:1; min-width:14px; max-width:40px; height:1px; margin:0 4px; margin-bottom:22px; }
+    .conn.done { background:linear-gradient(90deg,rgba(201,169,110,.6),rgba(201,169,110,.1)); }
+    .conn.pending { background:rgba(201,169,110,.07); }
+
+    /* ── Progress Bar ────────────────────────────────── */
+    .pbw { margin-bottom: 32px; }
+    .pbh { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .pbt { font-size:8px; letter-spacing:.18em; text-transform:uppercase; color:#4A4030; font-family:'DM Mono',monospace; }
+    .pbp { font-size:13px; font-weight:600; background:linear-gradient(135deg,#C9A96E,#B8965A); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-family:'DM Mono',monospace; }
+    .pbu { font-size:8px; color:#6A6450; font-family:'DM Mono',monospace; }
+    .pbt2 { height:1px; background:rgba(201,169,110,.08); overflow:visible; position:relative; }
+    .pbf { position:absolute; top:0; left:0; height:100%; background:linear-gradient(90deg,#C9A96E,#D4B77E 70%,#C9A96E); box-shadow:0 0 12px rgba(201,169,110,.3); transition:width .4s ease; }
+    .pbd { position:absolute; right:-3px; top:50%; transform:translateY(-50%); width:6px; height:6px; border-radius:50%; background:#C9A96E; box-shadow:0 0 8px rgba(201,169,110,.6); }
+
+    /* ── Step card ───────────────────────────────────── */
+    .step { display:none; }
+    .step.active { display:block; }
+    .scard { padding:1px; border-radius:2px; margin-bottom:36px; background:linear-gradient(135deg,rgba(201,169,110,.22) 0%,rgba(201,169,110,.05) 35%,rgba(0,0,0,.7) 100%); box-shadow:0 32px 80px rgba(0,0,0,.6),0 2px 0 rgba(201,169,110,.06) inset; }
+    .stopbar { height:1px; background:linear-gradient(90deg,#C9A96E,rgba(201,169,110,.35) 55%,transparent); }
+    .sbody { background:linear-gradient(180deg,#161616 0%,#0b0b0b 100%); border-radius:0 0 1px 1px; padding:40px 44px 44px; }
+    @media(max-width:600px){ .sbody { padding:24px 20px 28px; } }
+
+    /* ── Step heading ────────────────────────────────── */
+    .shd {
+      font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:#8A7250;
+      font-family:'DM Mono',monospace; margin-bottom:28px; padding-bottom:16px;
+      border-bottom:1px solid rgba(201,169,110,.07);
+      display:flex; align-items:center; gap:10px;
+    }
+    .shnum {
+      width:26px; height:26px; border-radius:50%; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(201,169,110,.1); border:1px solid rgba(201,169,110,.3);
+      font-size:10px; font-weight:600; color:var(--gold);
+    }
+
+    /* ── Section ─────────────────────────────────────── */
+    .sec { margin-bottom:24px; padding:1px; border-radius:2px; background:linear-gradient(135deg,rgba(201,169,110,.18) 0%,rgba(201,169,110,.04) 40%,rgba(0,0,0,.6) 100%); }
+    .sei { background:linear-gradient(180deg,#111111 0%,#0b0b0b 100%); border-radius:1px; padding:28px 32px; }
+    .seh { display:flex; align-items:center; gap:14px; margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid rgba(201,169,110,.07); }
+    .seic { width:34px; height:34px; border-radius:2px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(201,169,110,.05); border:1px solid rgba(201,169,110,.14); font-size:14px; }
+    .setl { font-size:13px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); line-height:1.2; font-family:'DM Mono',monospace; }
+    .sesl { font-size:11px; color:#4A4030; letter-spacing:.04em; font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; }
+    .seal { width:40px; height:1px; margin-left:auto; background:linear-gradient(90deg,rgba(201,169,110,.4),transparent); }
+    .fields { display:flex; flex-direction:column; gap:22px; }
+    .g2 { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:22px; }
+    @media(max-width:560px){ .g2,.g3 { grid-template-columns:1fr; } }
+
+    /* ── Form field ──────────────────────────────────── */
+    .fld { display:flex; flex-direction:column; gap:8px; }
+    .flb { font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:#64748B; font-family:'DM Mono',monospace; }
+    .flb .req { color:#EF4444; }
+    .fls { display:block; margin-top:2px; font-size:11px; color:#94A3B8; font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; }
+    .fbdr { padding:1px; border-radius:2px; background:rgba(201,169,110,.12); transition:background .35s; }
+    .fbdr:focus-within { background:linear-gradient(135deg,rgba(201,169,110,.7),rgba(201,169,110,.15)); }
+    .finner { background:#161616; border-radius:1px; }
+    .finner input, .finner select, .finner textarea {
+      width:100%; background:transparent; border:none; outline:none;
+      padding:12px 16px; font-size:13px; color:#F8FAFC; font-family:'DM Mono',monospace;
+    }
+    .finner select { appearance:none; cursor:pointer; }
+    .finner textarea { resize:vertical; min-height:72px; }
+    .finner input::placeholder, .finner textarea::placeholder { color:#4A4030; font-style:italic; }
+
+    /* ── Checkbox ────────────────────────────────────── */
+    .chkr { display:flex; align-items:flex-start; gap:12px; padding:16px; background:#111111; border:1px solid rgba(201,169,110,.08); cursor:pointer; transition:all .2s; }
+    .chkr:hover { border-color:rgba(201,169,110,.3); background:#161616; }
+    .chkb { width:20px; height:20px; border-radius:2px; flex-shrink:0; margin-top:1px; border:1px solid rgba(201,169,110,.18); background:#0b0b0b; display:flex; align-items:center; justify-content:center; }
+    .chkb.on { background:#C9A96E; border-color:#C9A96E; }
+    .chkl { font-size:12px; color:#5A5650; font-family:'Cormorant Garamond',Georgia,serif; line-height:1.6; }
+    .chkl.on { color:#C8C4BC; }
+
+    /* ── Chip group ──────────────────────────────────── */
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { font-size:11px; padding:6px 12px; border-radius:2px; background:rgba(201,169,110,.07); border:1px solid rgba(201,169,110,.25); color:var(--gold); font-family:'DM Mono',monospace; letter-spacing:.06em; }
+
+    /* ── Toggle buttons ──────────────────────────────── */
+    .tgrp { display:flex; gap:8px; flex-wrap:wrap; }
+    .tb { padding:8px 18px; border-radius:2px; cursor:pointer; font-size:12px; font-family:'DM Mono',monospace; letter-spacing:.04em; border:1px solid rgba(201,169,110,.1); background:#111111; color:#5A5650; transition:all .2s; }
+    .tb:hover { border-color:rgba(201,169,110,.45); }
+    .tb.g { background:var(--gold); border-color:rgba(201,169,110,.4); color:#0b0b0b; font-weight:500; }
+    .tb.r { background:#f85c5c; border-color:rgba(248,92,92,.35); color:white; font-weight:500; }
+
+    /* ── Upload tile ─────────────────────────────────── */
+    .ugrid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    @media(max-width:520px){ .ugrid { grid-template-columns:repeat(2,1fr); } }
+    .utile { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:20px 16px; border:2px dashed rgba(201,169,110,.15); border-radius:4px; background:#111111; text-align:center; cursor:pointer; transition:all .2s; }
+    .utile:hover { border-color:rgba(201,169,110,.4); background:#161616; }
+    .uico { font-size:22px; opacity:.7; }
+    .ulbl { font-size:10px; color:#4A4030; font-family:'DM Mono',monospace; letter-spacing:.1em; text-transform:uppercase; }
+    .ufmt { font-size:9px; color:#3A3020; font-family:'DM Mono',monospace; }
+
+    /* ── Signature canvas ────────────────────────────── */
+    .sigcv { width:100%; height:130px; display:block; background:#111111; border:1px dashed rgba(201,169,110,.25); border-radius:2px; cursor:crosshair; touch-action:none; }
+
+    /* ── Reference / Experience cards ───────────────── */
+    .rcard { padding:24px; background:#111111; border:1px solid rgba(201,169,110,.1); border-radius:2px; }
+    .rctl { font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8A7250; font-family:'DM Mono',monospace; margin-bottom:16px; }
+    .ecard { padding:20px; background:#111111; border:1px solid rgba(201,169,110,.1); border-radius:2px; margin-bottom:12px; }
+
+    /* ── Declaration box ─────────────────────────────── */
+    .dbox { padding:20px; background:rgba(201,169,110,.03); border:1px solid rgba(201,169,110,.1); border-radius:2px; }
+    .dtxt { font-size:12px; color:#4A4030; line-height:1.9; font-family:'Cormorant Garamond',Georgia,serif; }
+
+    /* ── Navigation ──────────────────────────────────── */
+    .nav { display:flex; align-items:center; justify-content:space-between; padding-top:8px; }
+    .nstep { display:flex; align-items:center; gap:8px; }
+    .nsw { font-size:9px; color:#3A3020; font-family:'DM Mono',monospace; letter-spacing:.1em; text-transform:uppercase; }
+    .nsn { font-size:20px; font-weight:300; color:var(--gold); line-height:1; font-family:'Cormorant Garamond',Georgia,serif; }
+    .nst { font-size:9px; color:#3A3020; font-family:'DM Mono',monospace; }
+    .nbtns { display:flex; gap:12px; align-items:center; }
+    .bprev { display:flex; align-items:center; gap:8px; padding:10px 20px; border-radius:2px; background:transparent; border:1px solid rgba(201,169,110,.12); color:#6A6450; font-size:11px; font-family:'DM Mono',monospace; letter-spacing:.08em; cursor:pointer; transition:all .3s; }
+    .bprev:hover { border-color:rgba(201,169,110,.3); color:var(--gold); }
+    .bprev:disabled { opacity:.3; cursor:not-allowed; }
+    .bnext { display:flex; align-items:center; gap:10px; padding:11px 28px; border-radius:2px; background:linear-gradient(135deg,#C9A96E,#B8965A); border:1px solid rgba(201,169,110,.4); color:#0b0b0b; font-size:11px; font-weight:500; font-family:'DM Mono',monospace; letter-spacing:.08em; cursor:pointer; box-shadow:0 4px 24px rgba(201,169,110,.18); transition:all .3s; }
+    .bsub { display:flex; align-items:center; gap:10px; padding:11px 32px; border-radius:2px; background:linear-gradient(135deg,#C9A96E,#B8965A); border:1px solid rgba(201,169,110,.4); color:#0b0b0b; font-size:11px; font-weight:500; font-family:'DM Mono',monospace; letter-spacing:.08em; cursor:pointer; box-shadow:0 6px 32px rgba(201,169,110,.2); transition:all .3s; }
+
+    /* ── Success screen ──────────────────────────────── */
+    #successScreen { display:none; }
+    #successScreen.active { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:40px 20px; }
+    .scard2 { max-width:560px; width:100%; }
+    .sbox { padding:1px; border-radius:2px; background:linear-gradient(135deg,rgba(201,169,110,.2) 0%,rgba(201,169,110,.04) 40%,rgba(0,0,0,.6) 100%); box-shadow:0 32px 80px rgba(0,0,0,.7); }
+    .sbody2 { background:#111111; border-radius:0 0 1px 1px; padding:36px 40px; }
+  </style>
+</head>
+<body>
+<div class="amb"></div>
+<div class="grid-bg"></div>
+
+<!-- ── Form page ──────────────────────────────────────── -->
+<div id="formPage">
+<div class="page">
+
+  <!-- Header -->
+  <div class="hdr">
+    <div class="eyebrow">
+      <div class="el"></div>
+      <span class="et">শিক্ষক আবেদনপত্র</span>
+      <div class="er"></div>
+    </div>
+    <div class="ttl">Teacher Application</div>
+    <div class="sub">Form — আবেদনপত্র</div>
+    <div class="dvd"><div class="dl"></div><div class="dd"></div><div class="dr"></div></div>
+    <p class="hdesc">
+      সকল প্রয়োজনীয় তথ্য পূরণ করুন এবং আবেদন জমা দিন।<br>
+      Fill out all required fields and submit your application.
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="sv">10</div><div class="sl">Steps</div></div>
+      <div class="stat"><div class="sv">5–7</div><div class="sl">Days Review</div></div>
+      <div class="stat"><div class="sv">100%</div><div class="sl">Secure</div></div>
+    </div>
+  </div>
+
+  <!-- Quick nav (preview only) -->
+  <div class="qnav" id="qnav"></div>
+
+  <!-- Step Tracker -->
+  <div class="tracker" id="tracker"></div>
+
+  <!-- Progress Bar -->
+  <div class="pbw">
+    <div class="pbh">
+      <span class="pbt">Application Progress</span>
+      <div style="display:flex;align-items:baseline;gap:3px">
+        <span class="pbp" id="pct">10</span><span class="pbu">%</span>
+      </div>
+    </div>
+    <div class="pbt2">
+      <div class="pbf" id="pbfill" style="width:10%"><div class="pbd"></div></div>
+    </div>
+  </div>
+
+  <!-- ── Step 1: Basic Identity ──────────────────────── -->
+  <div class="step active" id="step-1">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">1</div>Basic Identity &amp; Personal Info · ব্যক্তিগত তথ্য</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🖼️</div><div><div class="setl">Applicant Photo</div><div class="sesl">শিক্ষকের ছবি <span style="color:#C94040">*</span></div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap">
+            <div id="photoBox" style="width:90px;height:90px;background:#111111;border:1px dashed rgba(201,169,110,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;overflow:hidden" onclick="document.getElementById('photoIn').click()">
+              <svg id="photoIcon" style="width:28px;height:28px;color:#3A3020" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke-width="1.2"/><path stroke-width="1.2" d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <img id="photoPreview" style="display:none;width:100%;height:100%;object-fit:cover" alt="Preview"/>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#3A3020;line-height:1.8;margin-bottom:12px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">
+                পাসপোর্ট সাইজ ছবি · Passport size photo<br>JPG/PNG · Max 2MB
+              </p>
+              <input type="file" id="photoIn" accept="image/jpeg,image/png" style="display:none" onchange="handlePhoto(this)"/>
+              <label for="photoIn" style="display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px;background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.22);color:#C9A96E;cursor:pointer;font-family:'DM Mono',monospace">Choose Photo</label>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">👤</div><div><div class="setl">Personal Details</div><div class="sesl">ব্যক্তিগত বিবরণ</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="g2">
+            <div class="fld"><div class="flb">Full Name (English) <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Mohammad Rahman"/></div></div></div>
+            <div class="fld"><div class="flb">Full Name (Bangla) <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="যেমন: মোহাম্মদ রহমান"/></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Father's Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="Father's full name"/></div></div></div>
+            <div class="fld"><div class="flb">Mother's Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="Mother's full name"/></div></div></div>
+          </div>
+          <div class="g3">
+            <div class="fld"><div class="flb">Date of Birth <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="DD/MM/YYYY"/></div></div></div>
+            <div class="fld"><div class="flb">Gender <span class="req">*</span></div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Male</option><option>Female</option><option>Other</option></select></div></div></div>
+            <div class="fld"><div class="flb">Marital Status <span class="req">*</span></div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Single</option><option>Married</option><option>Divorced</option><option>Widowed</option></select></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Nationality <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Bangladeshi"/></div></div></div>
+            <div class="fld"><div class="flb">National ID / Birth Reg No. <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="17-digit NID or birth reg no."/></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Religion</div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Islam</option><option>Hinduism</option><option>Christianity</option><option>Buddhism</option><option>Other</option></select></div></div></div>
+            <div class="fld"><div class="flb">Blood Group</div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div></div></div>
+          </div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 2: Contact & Job ───────────────────────── -->
+  <div class="step" id="step-2">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">2</div>Contact &amp; Job Preference · যোগাযোগ ও পদ</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">📞</div><div><div class="setl">Contact Information</div><div class="sesl">যোগাযোগ তথ্য</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="g2">
+            <div class="fld"><div class="flb">Mobile Number <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="tel" placeholder="+880 1XXX-XXXXXX"/></div></div></div>
+            <div class="fld"><div class="flb">Alternative Mobile <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="tel" placeholder="+880 1XXX-XXXXXX"/></div></div></div>
+          </div>
+          <div class="fld"><div class="flb">Email Address <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="email" placeholder="your@email.com"/></div></div></div>
+          <div class="fld"><div class="flb">Present Address <span class="req">*</span></div><div class="fbdr"><div class="finner"><textarea placeholder="Full present address..."></textarea></div></div></div>
+          <div class="fld"><div class="flb">Permanent Address <span class="req">*</span></div><div class="fbdr"><div class="finner"><textarea placeholder="Full permanent address..."></textarea></div></div></div>
+          <div class="g2">
+            <div class="fld"><div class="flb">District <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Dhaka"/></div></div></div>
+            <div class="fld"><div class="flb">Thana / Upazila <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Mirpur"/></div></div></div>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">💼</div><div><div class="setl">Job Preference</div><div class="sesl">পদ পছন্দ</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="g2">
+            <div class="fld"><div class="flb">Applying For Post <span class="req">*</span></div><div class="fbdr"><div class="finner"><select><option value="">— Select Post —</option><option>Assistant Teacher</option><option>Senior Teacher</option><option>Subject Teacher</option><option>Class Teacher</option></select></div></div></div>
+            <div class="fld"><div class="flb">Subject / Department <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Mathematics"/></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Expected Joining Date <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="DD/MM/YYYY"/></div></div></div>
+            <div class="fld"><div class="flb">Employment Type <span class="req">*</span></div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Full-time</option><option>Part-time</option><option>Contract</option></select></div></div></div>
+          </div>
+          <div class="fld"><div class="flb">Expected Salary (BDT / Month)</div><div class="fbdr"><div class="finner"><input type="number" placeholder="e.g. 25000"/></div></div></div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 3: Academics ───────────────────────────── -->
+  <div class="step" id="step-3">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">3</div>Academic Qualifications · শিক্ষাগত যোগ্যতা</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🎓</div><div><div class="setl">1st Academic Entry <span class="req">*</span></div><div class="sesl">১ম শিক্ষাগত যোগ্যতা</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="g2">
+            <div class="fld"><div class="flb">Exam / Degree Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. SSC, HSC, B.Ed."/></div></div></div>
+            <div class="fld"><div class="flb">Group / Subject <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Science, Arts"/></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Board / University <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Dhaka Board"/></div></div></div>
+            <div class="fld"><div class="flb">Institution Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Dhaka College"/></div></div></div>
+          </div>
+          <div class="g3">
+            <div class="fld"><div class="flb">Passing Year <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 2019"/></div></div></div>
+            <div class="fld"><div class="flb">Result / GPA <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 5.00"/></div></div></div>
+            <div class="fld"><div class="flb">Out Of <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 5.00"/></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Duration <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 2 years"/></div></div></div>
+            <div class="fld"><div class="flb">Certificate Upload <span class="req">*</span></div>
+              <div style="border:2px dashed rgba(201,169,110,.15);border-radius:4px;padding:16px;background:#111111;text-align:center;cursor:pointer">
+                <div style="font-size:13px;color:#3A3020;font-family:'DM Mono',monospace">📎 Upload Certificate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🎓</div><div><div class="setl">2nd Academic Entry <span class="req">*</span></div><div class="sesl">২য় শিক্ষাগত যোগ্যতা</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="g2">
+            <div class="fld"><div class="flb">Exam / Degree Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. HSC, BA, MA"/></div></div></div>
+            <div class="fld"><div class="flb">Group / Subject <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Humanities"/></div></div></div>
+          </div>
+          <div class="g2">
+            <div class="fld"><div class="flb">Board / University <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. University of Dhaka"/></div></div></div>
+            <div class="fld"><div class="flb">Institution Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Jahangirnagar University"/></div></div></div>
+          </div>
+          <div class="g3">
+            <div class="fld"><div class="flb">Passing Year <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 2022"/></div></div></div>
+            <div class="fld"><div class="flb">Result / GPA <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 3.75"/></div></div></div>
+            <div class="fld"><div class="flb">Out Of <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. 4.00"/></div></div></div>
+          </div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 4: Professional Qualifications ─────────── -->
+  <div class="step" id="step-4">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">4</div>Professional Qualifications · পেশাদার যোগ্যতা</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🏅</div><div><div class="setl">NTRCA &amp; Teaching Credentials</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div>
+            <div class="flb" style="margin-bottom:10px">NTRCA Registration? <span class="req">*</span></div>
+            <div class="tgrp">
+              <button class="tb g">Yes — NTRCA Registered</button>
+              <button class="tb">No — Non-NTRCA</button>
+              <button class="tb">Not Applicable</button>
+            </div>
+          </div>
+          <div class="fld"><div class="flb">NTRCA Registration Number</div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. NTRCA-2021-XXXXX"/></div></div></div>
+          <div>
+            <div class="flb" style="margin-bottom:10px">MPO Experience? <span class="req">*</span></div>
+            <div class="tgrp"><button class="tb g">Yes</button><button class="tb">No</button></div>
+          </div>
+          <div class="fld"><div class="flb">Other Certifications</div><div class="fbdr"><div class="finner"><textarea placeholder="List any other professional certifications..."></textarea></div></div></div>
+          <div class="fld"><div class="flb">Why do you want to work with us? <span class="req">*</span></div><div class="fbdr"><div class="finner"><textarea rows="4" placeholder="Describe your motivation for joining our institution..."></textarea></div></div></div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 5: Teaching Experience ────────────────── -->
+  <div class="step" id="step-5">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">5</div>Teaching Experience · শিক্ষকতার অভিজ্ঞতা</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">📋</div><div><div class="setl">Work Experience</div><div class="sesl">কর্মঅভিজ্ঞতা</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="ecard">
+            <div class="rctl">Position 1</div>
+            <div class="fields">
+              <div class="g2">
+                <div class="fld"><div class="flb">Institution Name</div><div class="fbdr"><div class="finner"><input type="text" placeholder="School / Madrasah name"/></div></div></div>
+                <div class="fld"><div class="flb">Position / Designation</div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Class Teacher"/></div></div></div>
+              </div>
+              <div class="g2">
+                <div class="fld"><div class="flb">Start Date</div><div class="fbdr"><div class="finner"><input type="text" placeholder="DD/MM/YYYY"/></div></div></div>
+                <div class="fld">
+                  <div class="flb">Still Working?</div>
+                  <div class="tgrp" style="margin-top:6px"><button class="tb">Yes</button><button class="tb r">No</button></div>
+                </div>
+              </div>
+              <div class="fld"><div class="flb">End Date</div><div class="fbdr"><div class="finner"><input type="text" placeholder="DD/MM/YYYY"/></div></div></div>
+              <div class="fld"><div class="flb">Responsibilities</div><div class="fbdr"><div class="finner"><textarea placeholder="Briefly describe your role..."></textarea></div></div></div>
+            </div>
+          </div>
+          <button class="tb" style="align-self:flex-start">＋ Add Another Position</button>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 6: Suitability & Skills ───────────────── -->
+  <div class="step" id="step-6">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">6</div>Teaching Suitability &amp; Skills · শিক্ষাদান উপযুক্ততা</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">📚</div><div><div class="setl">Classes &amp; Subjects</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div>
+            <div class="flb" style="margin-bottom:10px">Classes Able to Handle <span class="req">*</span></div>
+            <div class="tgrp">
+              <button class="tb g">Class 0–5</button>
+              <button class="tb g">Class 6–8</button>
+              <button class="tb">Class 9/10</button>
+            </div>
+          </div>
+          <div>
+            <div class="flb" style="margin-bottom:12px">Preferred Subjects <span class="req">*</span></div>
+            <div class="chips">
+              <span class="chip">কুরআন মাজিদ ও তাজভিদ</span>
+              <span class="chip">আকাইদ ও ফিকহ</span>
+              <span class="chip">Arabic</span>
+              <span class="chip">Bengali</span>
+              <span class="chip">English</span>
+              <span class="chip">Mathematics</span>
+              <span class="chip">General Science</span>
+              <span class="chip">ICT</span>
+            </div>
+          </div>
+          <div class="fld"><div class="flb">Additional Subjects / Notes</div><div class="fbdr"><div class="finner"><textarea placeholder="Any additional subjects or notes..."></textarea></div></div></div>
+        </div>
+      </div></div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🎯</div><div><div class="setl">Duties &amp; Skills</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div><div class="flb" style="margin-bottom:8px">Coaching / Private Tutoring</div><div class="tgrp"><button class="tb">Yes</button><button class="tb r">No</button></div></div>
+          <div><div class="flb" style="margin-bottom:8px">Willing: Exam Invigilation</div><div class="tgrp"><button class="tb g">Yes</button><button class="tb">No</button></div></div>
+          <div><div class="flb" style="margin-bottom:8px">Willing: Class Teacher Duty</div><div class="tgrp"><button class="tb g">Yes</button><button class="tb">No</button></div></div>
+          <div class="g2">
+            <div class="fld"><div class="flb">ICT Skills Level</div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Basic</option><option>Intermediate</option><option>Advanced</option></select></div></div></div>
+            <div class="fld"><div class="flb">Spoken English Level</div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Beginner</option><option>Elementary</option><option>Intermediate</option><option>Upper Intermediate</option><option>Advanced</option></select></div></div></div>
+          </div>
+          <div>
+            <div class="flb" style="margin-bottom:10px">Software Proficiency</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div class="chkr"><div class="chkb"></div><span class="chkl">MS Word</span></div>
+              <div class="chkr"><div class="chkb"></div><span class="chkl">MS Excel</span></div>
+              <div class="chkr"><div class="chkb"></div><span class="chkl">PowerPoint</span></div>
+              <div class="chkr"><div class="chkb"></div><span class="chkl">Google Classroom</span></div>
+              <div class="chkr"><div class="chkb"></div><span class="chkl">Bangla Typing</span></div>
+              <div class="chkr"><div class="chkb"></div><span class="chkl">English Typing</span></div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 7: Personal Background ───────────────── -->
+  <div class="step" id="step-7">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">7</div>Personal Background · ব্যক্তিগত পটভূমি</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🚨</div><div><div class="setl">Emergency Contact</div><div class="sesl">জরুরি যোগাযোগ</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="g3">
+            <div class="fld"><div class="flb">Contact Person <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="Full name"/></div></div></div>
+            <div class="fld"><div class="flb">Phone Number <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="tel" placeholder="+880 1XXX-XXXXXX"/></div></div></div>
+            <div class="fld"><div class="flb">Relationship <span class="req">*</span></div><div class="fbdr"><div class="finner"><select><option value="">— Select —</option><option>Spouse</option><option>Parent</option><option>Sibling</option><option>Relative</option><option>Friend</option></select></div></div></div>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🔍</div><div><div class="setl">Background Information</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div><div class="flb" style="margin-bottom:8px">Any Criminal Record?</div><div class="tgrp"><button class="tb">Yes</button><button class="tb r">No</button></div></div>
+          <div><div class="flb" style="margin-bottom:8px">Any Disability?</div><div class="tgrp"><button class="tb">Yes</button><button class="tb r">No</button></div></div>
+          <div class="fld"><div class="flb">Additional Background Notes</div><div class="fbdr"><div class="finner"><textarea placeholder="Any other relevant background information..."></textarea></div></div></div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 8: Documents ──────────────────────────── -->
+  <div class="step" id="step-8">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">8</div>Document Upload · কাগজপত্র আপলোড</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">📎</div><div><div class="setl">Required Documents</div><div class="sesl">প্রয়োজনীয় কাগজপত্র</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="ugrid">
+            <div class="utile"><div class="uico">🖼️</div><div class="ulbl">Passport Photo <span style="color:#EF4444">*</span></div><div class="ufmt">JPG · Max 2MB</div></div>
+            <div class="utile"><div class="uico">📇</div><div class="ulbl">National ID Copy <span style="color:#EF4444">*</span></div><div class="ufmt">PDF/JPG · Max 5MB</div></div>
+            <div class="utile"><div class="uico">📄</div><div class="ulbl">Academic Certificates <span style="color:#EF4444">*</span></div><div class="ufmt">PDF/ZIP · Max 10MB</div></div>
+            <div class="utile"><div class="uico">📋</div><div class="ulbl">Transcripts / Marksheets</div><div class="ufmt">PDF/JPG · Max 5MB</div></div>
+            <div class="utile"><div class="uico">🏅</div><div class="ulbl">Experience Certificates</div><div class="ufmt">PDF/JPG · Max 5MB</div></div>
+            <div class="utile"><div class="uico">✍️</div><div class="ulbl">Signature Upload <span style="color:#EF4444">*</span></div><div class="ufmt">JPG · Max 1MB</div></div>
+          </div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 9: References ─────────────────────────── -->
+  <div class="step" id="step-9">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">9</div>Professional References · পেশাদার রেফারেন্স</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">🤝</div><div><div class="setl">References</div><div class="sesl">রেফারেন্স</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div><div class="flb" style="margin-bottom:8px">Do you have professional references?</div><div class="tgrp"><button class="tb g">Yes</button><button class="tb">No</button></div></div>
+          <div class="rcard">
+            <div class="rctl">Reference 1 (Required)</div>
+            <div class="fields">
+              <div class="g2">
+                <div class="fld"><div class="flb">Full Name <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="Reference's full name"/></div></div></div>
+                <div class="fld"><div class="flb">Designation <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Principal, Director"/></div></div></div>
+              </div>
+              <div class="g2">
+                <div class="fld"><div class="flb">Organization <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="Institution or company name"/></div></div></div>
+                <div class="fld"><div class="flb">Relationship <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="text" placeholder="e.g. Former Principal"/></div></div></div>
+              </div>
+              <div class="g2">
+                <div class="fld"><div class="flb">Phone Number <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="tel" placeholder="+880 1XXX-XXXXXX"/></div></div></div>
+                <div class="fld"><div class="flb">Email <span class="req">*</span></div><div class="fbdr"><div class="finner"><input type="email" placeholder="reference@email.com"/></div></div></div>
+              </div>
+            </div>
+          </div>
+          <button class="tb" style="align-self:flex-start">＋ Add Second Reference</button>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- ── Step 10: Declaration ───────────────────────── -->
+  <div class="step" id="step-10">
+    <div class="scard"><div class="stopbar"></div><div class="sbody">
+      <div class="shd"><div class="shnum">10</div>Declaration &amp; Submission · ঘোষণাপত্র</div>
+
+      <div class="sec"><div class="sei">
+        <div class="seh"><div class="seic">📜</div><div><div class="setl">Declaration</div><div class="sesl">ঘোষণাপত্র</div></div><div class="seal"></div></div>
+        <div class="fields">
+          <div class="dbox">
+            <p class="dtxt">
+              I hereby declare that all the information provided in this application is true, accurate,
+              and complete to the best of my knowledge. I understand that any false statement may result
+              in the rejection of my application or termination of employment.<br><br>
+              আমি এতদ্বারা ঘোষণা করছি যে এই আবেদনে প্রদত্ত সকল তথ্য আমার জ্ঞান ও বিশ্বাস অনুযায়ী সত্য, সঠিক এবং সম্পূর্ণ।
+            </p>
+          </div>
+
+          <div class="fields" style="gap:12px">
+            <div class="chkr" onclick="this.querySelector('.chkb').classList.toggle('on');this.querySelector('.chkl').classList.toggle('on')">
+              <div class="chkb on"><svg width="12" height="10" fill="none" stroke="#0b0b0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+              <div><span class="chkl on">I confirm that all information provided is accurate and truthful. <span style="color:#EF4444">*</span></span><span style="display:block;font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">আমি নিশ্চিত করছি যে প্রদত্ত সকল তথ্য সঠিক এবং সত্য।</span></div>
+            </div>
+            <div class="chkr" onclick="this.querySelector('.chkb').classList.toggle('on');this.querySelector('.chkl').classList.toggle('on')">
+              <div class="chkb"></div>
+              <div><span class="chkl">I consent to background verification as required. <span style="color:#EF4444">*</span></span><span style="display:block;font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">আমি প্রয়োজনীয় ব্যাকগ্রাউন্ড যাচাইয়ে সম্মতি দিচ্ছি।</span></div>
+            </div>
+            <div class="chkr" onclick="this.querySelector('.chkb').classList.toggle('on');this.querySelector('.chkl').classList.toggle('on')">
+              <div class="chkb"></div>
+              <div><span class="chkl">I declare that no fraudulent documents have been submitted. <span style="color:#EF4444">*</span></span><span style="display:block;font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">আমি ঘোষণা করছি যে কোনো প্রতারণামূলক নথি জমা দেওয়া হয়নি।</span></div>
+            </div>
+          </div>
+
+          <div class="fld" style="max-width:220px">
+            <div class="flb">Submission Date</div>
+            <div class="fbdr"><div class="finner"><input type="text" id="subDate" readonly/></div></div>
+          </div>
+
+          <div>
+            <div class="flb" style="margin-bottom:10px">Digital Signature <span class="req">*</span></div>
+            <canvas class="sigcv" id="sigCanvas"></canvas>
+            <div style="margin-top:8px"><button class="tb" onclick="clearSig()">Clear Signature</button></div>
+          </div>
+        </div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <div class="nstep">
+      <span class="nsw">Step</span>
+      <span class="nsn" id="stepNum">1</span>
+      <span class="nst">/ 10</span>
+    </div>
+    <div class="nbtns">
+      <button class="bprev" id="btnPrev" onclick="go(cur-1)" disabled>
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
+        Previous
+      </button>
+      <button class="bnext" id="btnNext" onclick="go(cur+1)">
+        Continue
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div><!-- /page -->
+</div><!-- /formPage -->
+
+<!-- ── Success Screen ───────────────────────────────── -->
+<div id="successScreen">
+  <div class="scard2">
+    <div style="text-align:center;margin-bottom:36px">
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px">
+        <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.3))"></div>
+        <div style="width:4px;height:4px;border-radius:50%;background:rgba(201,169,110,.4)"></div>
+        <div style="width:60px;height:1px;background:linear-gradient(90deg,rgba(201,169,110,.3),transparent)"></div>
+      </div>
+      <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:50%;background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.2);display:flex;align-items:center;justify-content:center">
+        <svg width="24" height="20" fill="none" viewBox="0 0 24 20"><path d="M2 10l7 7L22 2" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:300;color:#E8E4DC;letter-spacing:.04em;line-height:1.1;margin-bottom:8px">Application Submitted</h1>
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:300;color:#8A7250;letter-spacing:.12em;font-style:italic">আবেদন জমা হয়েছে</div>
+    </div>
+    <div class="sbox">
+      <div style="height:1px;background:linear-gradient(90deg,#C9A96E,rgba(201,169,110,.2) 60%,transparent)"></div>
+      <div class="sbody2">
+        <p style="font-size:13px;color:#4A4030;line-height:1.9;text-align:center;margin-bottom:32px;font-family:'Cormorant Garamond',Georgia,serif">
+          আপনার শিক্ষক আবেদন সফলভাবে গৃহীত হয়েছে।<br>
+          Your application has been received. Please allow <span style="color:#C9A96E">5–7 business days</span> for review.
+        </p>
+        <div style="text-align:center;margin-bottom:36px;padding:20px 28px;background:rgba(201,169,110,.03);border:1px solid rgba(201,169,110,.12);border-top:1px solid rgba(201,169,110,.22)">
+          <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:#3A3020;font-family:'DM Mono',monospace;margin-bottom:10px">আবেদন আইডি · Application ID</div>
+          <div id="refNum" style="font-family:'DM Mono',monospace;font-size:22px;color:#C9A96E;letter-spacing:.14em;font-weight:300"></div>
+        </div>
+        <div style="margin-bottom:32px">
+          <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#3A3020;font-family:'DM Mono',monospace;margin-bottom:20px">What happens next</div>
+          <div>
+            <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(201,169,110,.06)"><div style="font-size:10px;font-family:'DM Mono',monospace;color:#4A3D26;min-width:20px;margin-top:2px">01</div><div><div style="font-size:13px;color:#8A8478;font-family:'Cormorant Garamond',Georgia,serif">Confirmation email within 24 hours</div><div style="font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">২৪ ঘন্টার মধ্যে নিশ্চিতকরণ ইমেইল</div></div></div>
+            <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(201,169,110,.06)"><div style="font-size:10px;font-family:'DM Mono',monospace;color:#4A3D26;min-width:20px;margin-top:2px">02</div><div><div style="font-size:13px;color:#8A8478;font-family:'Cormorant Garamond',Georgia,serif">Application review (5–7 business days)</div><div style="font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">আবেদন পর্যালোচনা (৫–৭ দিন)</div></div></div>
+            <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(201,169,110,.06)"><div style="font-size:10px;font-family:'DM Mono',monospace;color:#4A3D26;min-width:20px;margin-top:2px">03</div><div><div style="font-size:13px;color:#8A8478;font-family:'Cormorant Garamond',Georgia,serif">Shortlisted candidates contacted for interview</div><div style="font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">সাক্ষাৎকারের জন্য যোগাযোগ</div></div></div>
+            <div style="display:flex;gap:16px;padding:14px 0"><div style="font-size:10px;font-family:'DM Mono',monospace;color:#4A3D26;min-width:20px;margin-top:2px">04</div><div><div style="font-size:13px;color:#8A8478;font-family:'Cormorant Garamond',Georgia,serif">Final decision communicated via email</div><div style="font-size:11px;color:#3A3020;margin-top:2px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic">চূড়ান্ত সিদ্ধান্ত ইমেইলে</div></div></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;background:linear-gradient(135deg,#C9A96E,#B8965A);border:1px solid rgba(201,169,110,.4);color:#0b0b0b;cursor:pointer;width:100%;transition:all .3s;border-radius:2px">Download Receipt</button>
+          <button onclick="resetForm()" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;background:transparent;border:1px solid rgba(201,169,110,.1);color:#4A4030;cursor:pointer;width:100%;transition:all .3s;border-radius:2px">Back to Form</button>
+        </div>
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid rgba(201,169,110,.06);text-align:center">
+          <p style="font-size:11px;color:#2E2820;font-family:'Cormorant Garamond',Georgia,serif">
+            Questions? Contact us at <a href="mailto:hr@school.edu" style="color:#8A7250;text-decoration:none">hr@school.edu</a>
+            or <a href="tel:+8801234567890" style="color:#8A7250;text-decoration:none">+880 1234-567890</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── State ────────────────────────────────────────────
+  const TOTAL = 10;
+  const LABELS = ['Identity','Contact','Academics','Professional','Experience','Suitability','Background','Documents','References','Declaration'];
+  let cur = 1;
+
+  // ── Build step tracker ───────────────────────────────
+  function buildTracker() {
+    const el = document.getElementById('tracker');
+    el.innerHTML = '';
+    LABELS.forEach((lbl, i) => {
+      const n = i + 1;
+      const state = n < cur ? 'done' : n === cur ? 'active' : 'pending';
+      const item = document.createElement('div');
+      item.className = 'si';
+      item.title = `Go to Step ${n}`;
+      item.onclick = () => go(n);
+      const circle = document.createElement('div');
+      circle.className = `sc ${state}`;
+      if (state === 'done') {
+        circle.innerHTML = '<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3 6-7" stroke="#0b0b0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      } else {
+        circle.textContent = n;
+      }
+      const label = document.createElement('span');
+      label.className = `slb ${state}`;
+      label.textContent = lbl;
+      item.appendChild(circle);
+      item.appendChild(label);
+      el.appendChild(item);
+      if (i < TOTAL - 1) {
+        const conn = document.createElement('div');
+        conn.className = `conn ${state === 'done' ? 'done' : 'pending'}`;
+        el.appendChild(conn);
+      }
+    });
+  }
+
+  // ── Build quick-nav buttons ──────────────────────────
+  function buildQNav() {
+    const el = document.getElementById('qnav');
+    el.innerHTML = '';
+    LABELS.forEach((lbl, i) => {
+      const btn = document.createElement('button');
+      btn.className = `qb${i + 1 === cur ? ' cur' : ''}`;
+      btn.textContent = `${i + 1}. ${lbl}`;
+      btn.onclick = () => go(i + 1);
+      el.appendChild(btn);
+    });
+  }
+
+  // ── Navigate to step ─────────────────────────────────
+  function go(n) {
+    n = Math.min(TOTAL, Math.max(1, n));
+    cur = n;
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById(`step-${cur}`).classList.add('active');
+    document.getElementById('stepNum').textContent = cur;
+    const pct = Math.round((cur / TOTAL) * 100);
+    document.getElementById('pct').textContent = pct;
+    document.getElementById('pbfill').style.width = pct + '%';
+    const prev = document.getElementById('btnPrev');
+    const next = document.getElementById('btnNext');
+    prev.disabled = cur === 1;
+    if (cur === TOTAL) {
+      next.className = 'bsub';
+      next.innerHTML = 'Submit Application <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"/></svg>';
+      next.onclick = submitForm;
+    } else {
+      next.className = 'bnext';
+      next.innerHTML = 'Continue <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>';
+      next.onclick = () => go(cur + 1);
+    }
+    buildTracker();
+    buildQNav();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Submit ───────────────────────────────────────────
+  function submitForm() {
+    document.getElementById('formPage').style.display = 'none';
+    const ss = document.getElementById('successScreen');
+    ss.classList.add('active');
+    document.getElementById('refNum').textContent = 'TCH' + Math.floor(100000 + Math.random() * 900000);
+  }
+
+  function resetForm() {
+    document.getElementById('successScreen').classList.remove('active');
+    document.getElementById('formPage').style.display = '';
+    go(1);
+  }
+
+  // ── Photo upload ─────────────────────────────────────
+  function handlePhoto(input) {
+    const file = input.files[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) { alert('File size must be under 2MB'); return; }
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const prev = document.getElementById('photoPreview');
+      const icon = document.getElementById('photoIcon');
+      prev.src = reader.result;
+      prev.style.display = 'block';
+      icon.style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // ── Signature canvas ──────────────────────────────────
+  const sigCanvas = document.getElementById('sigCanvas');
+  let sigCtx, sigDrawing = false;
+  window.addEventListener('load', () => {
+    sigCanvas.width = sigCanvas.offsetWidth || 600;
+    sigCanvas.height = 130;
+    sigCtx = sigCanvas.getContext('2d');
+    sigCtx.strokeStyle = '#C9A96E';
+    sigCtx.lineWidth = 1.8;
+    sigCtx.lineCap = 'round';
+    sigCtx.lineJoin = 'round';
+
+    function pos(e) {
+      const r = sigCanvas.getBoundingClientRect();
+      const src = e.touches ? e.touches[0] : e;
+      return { x: src.clientX - r.left, y: src.clientY - r.top };
+    }
+    sigCanvas.addEventListener('mousedown', e => { sigDrawing = true; const p = pos(e); sigCtx.beginPath(); sigCtx.moveTo(p.x, p.y); });
+    sigCanvas.addEventListener('mousemove', e => { if (!sigDrawing) return; const p = pos(e); sigCtx.lineTo(p.x, p.y); sigCtx.stroke(); });
+    sigCanvas.addEventListener('mouseup', () => sigDrawing = false);
+    sigCanvas.addEventListener('mouseleave', () => sigDrawing = false);
+    sigCanvas.addEventListener('touchstart', e => { e.preventDefault(); sigDrawing = true; const p = pos(e); sigCtx.beginPath(); sigCtx.moveTo(p.x, p.y); }, { passive: false });
+    sigCanvas.addEventListener('touchmove', e => { e.preventDefault(); if (!sigDrawing) return; const p = pos(e); sigCtx.lineTo(p.x, p.y); sigCtx.stroke(); }, { passive: false });
+    sigCanvas.addEventListener('touchend', () => sigDrawing = false);
+
+    // Today's date
+    const d = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    document.getElementById('subDate').value = `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
+  });
+
+  function clearSig() {
+    if (sigCtx) sigCtx.clearRect(0, 0, sigCanvas.width, sigCanvas.height);
+  }
+
+  // ── Init ─────────────────────────────────────────────
+  buildTracker();
+  buildQNav();
+</script>
+</body>
+</html>

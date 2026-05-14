@@ -23,7 +23,7 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
           Application Progress
         </span>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px' }}>
-          <span style={{ fontSize: '13px', fontWeight: 600, background: 'linear-gradient(135deg, #3B82F6, #F59E0B)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontFamily: 'DM Mono, monospace', lineHeight: 1 }}>
+          <span style={{ fontSize: '13px', fontWeight: 600, background: 'linear-gradient(135deg, #C9A96E, #B8965A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontFamily: 'DM Mono, monospace', lineHeight: 1 }}>
             {pct}
           </span>
           <span style={{ fontSize: '8px', color: '#6A6450', fontFamily: 'DM Mono, monospace' }}>%</span>
@@ -43,7 +43,7 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
               top: '0',
               height: '100%',
               width: `${segmentWidth}%`,
-              background: 'linear-gradient(90deg, #3B82F6, #F59E0B 70%, #3B82F6)',
+              background: 'linear-gradient(90deg, #C9A96E, #D4B77E 70%, #C9A96E)',
               boxShadow: '0 0 12px rgba(201,169,110,0.3)',
             }}
           >
