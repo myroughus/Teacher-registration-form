@@ -256,7 +256,7 @@ export function TeacherApplicationForm() {
           fontFamily: 'DM Mono, monospace',
           fontSize: 'clamp(32px, 4.5vw, 48px)',
           fontWeight: 700,
-          background: 'linear-gradient(135deg, #3B82F6, #F59E0B)',
+          background: 'linear-gradient(135deg, #C9A96E, #B8965A)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -346,13 +346,13 @@ export function TeacherApplicationForm() {
       {/* ── Form Card ──────────────────────────────────── */}
       <div style={{
         padding: '1px', borderRadius: '2px', marginBottom: '36px',
-        background: 'linear-gradient(135deg, rgba(201,169,110,0.22) 0%, rgba(201,169,110,0.05) 35%, rgba(16,22,36,0.7) 100%)',
+        background: 'linear-gradient(135deg, rgba(201,169,110,0.22) 0%, rgba(201,169,110,0.05) 35%, rgba(0,0,0,0.7) 100%)',
         boxShadow: '0 32px 80px rgba(0,0,0,0.6), 0 2px 0 rgba(201,169,110,0.06) inset',
       }}>
         {/* Gold accent top bar */}
         <div style={{ height: '1px', background: 'linear-gradient(90deg, #C9A96E, rgba(201,169,110,0.35) 55%, transparent)' }} />
         <div style={{
-          background: 'linear-gradient(180deg, #0C1119 0%, #080D14 100%)',
+          background: 'linear-gradient(180deg, #161616 0%, #0b0b0b 100%)',
           borderRadius: '0 0 1px 1px', padding: '40px 44px 44px',
         }}>
           <form onSubmit={handleSubmit}>
@@ -409,7 +409,7 @@ export function TeacherApplicationForm() {
                 padding: '11px 28px', borderRadius: '2px',
                 background: 'linear-gradient(135deg, #C9A96E 0%, #B8965A 100%)',
                 border: '1px solid rgba(201,169,110,0.4)',
-                color: '#030508',
+                color: '#0b0b0b',
                 fontSize: '11px', fontWeight: 500,
                 fontFamily: 'DM Mono, monospace', letterSpacing: '0.08em',
                 cursor: 'pointer',
@@ -430,7 +430,7 @@ export function TeacherApplicationForm() {
                 padding: '11px 32px', borderRadius: '2px',
                 background: 'linear-gradient(135deg, #C9A96E 0%, #B8965A 100%)',
                 border: '1px solid rgba(201,169,110,0.4)',
-                color: '#030508',
+                color: '#0b0b0b',
                 fontSize: '11px', fontWeight: 500,
                 fontFamily: 'DM Mono, monospace', letterSpacing: '0.08em',
                 cursor: 'pointer',
@@ -1020,7 +1020,7 @@ function Step3Academics({ formData, updateField, validationErrors, attemptedSubm
             <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2 leading-tight">
               Certificate Upload <span className="text-[#f85c5c]">*</span><br/>সনদ যুক্ত করুন
             </label>
-            <div className={`flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A] ${showError('certificate1') ? 'border-[rgba(248,92,92,0.5)]' : 'border-[rgba(201,169,110,0.1)]'}`}>
+            <div className={`flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111] ${showError('certificate1') ? 'border-[rgba(248,92,92,0.5)]' : 'border-[rgba(201,169,110,0.1)]'}`}>
               <input
                 type="file"
                 accept=".pdf,image/*"
@@ -1036,7 +1036,7 @@ function Step3Academics({ formData, updateField, validationErrors, attemptedSubm
             <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2 leading-tight">
               Transcript/Marksheet<br/>ট্রান্সক্রিপ্ট/মার্কশিট
             </label>
-            <div className="flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A]">
+            <div className="flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111]">
               <input
                 type="file"
                 accept=".pdf,image/*"
@@ -1164,7 +1164,7 @@ function Step3Academics({ formData, updateField, validationErrors, attemptedSubm
             <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2 leading-tight">
               Certificate Upload <span className="text-[#f85c5c]">*</span><br/>সনদ যুক্ত করুন
             </label>
-            <div className={`flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A] ${showError('certificate2') ? 'border-[rgba(248,92,92,0.5)]' : 'border-[rgba(201,169,110,0.1)]'}`}>
+            <div className={`flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111] ${showError('certificate2') ? 'border-[rgba(248,92,92,0.5)]' : 'border-[rgba(201,169,110,0.1)]'}`}>
               <input
                 type="file"
                 accept=".pdf,image/*"
@@ -1180,7 +1180,7 @@ function Step3Academics({ formData, updateField, validationErrors, attemptedSubm
             <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2 leading-tight">
               Transcript/Marksheet<br/>ট্রান্সক্রিপ্ট/মার্কশিট
             </label>
-            <div className="flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A]">
+            <div className="flex-1 relative flex flex-col items-center justify-center gap-2 w-full min-h-[100px] px-4 py-4 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111]">
               <input
                 type="file"
                 accept=".pdf,image/*"
@@ -1216,8 +1216,8 @@ function Step4ProfessionalQualifications({ formData, updateField, validationErro
           Do you have professional qualifications? · আপনার পেশাগত যোগ্যতা আছে?
         </label>
         <div className="flex gap-2">
-          <button type="button" onClick={() => updateField('hasQualifications', 'yes')} className={`px-4 py-2 rounded text-[12px] transition-all ${hasQualifications ? 'bg-[#C9A96E] text-[#030508] font-medium' : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'}`}>Yes</button>
-          <button type="button" onClick={() => { updateField('hasQualifications', 'no'); updateField('ntrcaStatus', 'Not Applicable'); updateField('mpoExperience', 'No'); }} className={`px-4 py-2 rounded text-[12px] transition-all ${!hasQualifications ? 'bg-[#f85c5c] text-white font-medium' : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'}`}>No</button>
+          <button type="button" onClick={() => updateField('hasQualifications', 'yes')} className={`px-4 py-2 rounded text-[12px] transition-all ${hasQualifications ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium' : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'}`}>Yes</button>
+          <button type="button" onClick={() => { updateField('hasQualifications', 'no'); updateField('ntrcaStatus', 'Not Applicable'); updateField('mpoExperience', 'No'); }} className={`px-4 py-2 rounded text-[12px] transition-all ${!hasQualifications ? 'bg-[#f85c5c] text-white font-medium' : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'}`}>No</button>
         </div>
       </div>
 
@@ -1297,8 +1297,8 @@ function Step5TeachingExperience({ formData, updateField, validationErrors, atte
             onClick={() => updateField('hasTeachingExperience', 'yes')}
             className={`px-4 py-2 rounded text-[12px] transition-all ${
               hasExperience
-                ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
             }`}
           >
             Yes
@@ -1309,7 +1309,7 @@ function Step5TeachingExperience({ formData, updateField, validationErrors, atte
             className={`px-4 py-2 rounded text-[12px] transition-all ${
               !hasExperience
                 ? 'bg-[#f85c5c] text-white font-medium'
-                : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
             }`}
           >
             No
@@ -1413,8 +1413,8 @@ function Step5TeachingExperience({ formData, updateField, validationErrors, atte
                         onClick={() => updateExperience(exp.id, 'currentlyWorking', 'Yes')}
                         className={`px-4 py-2 rounded text-[12px] transition-all ${
                           exp.currentlyWorking === 'Yes'
-                            ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                            : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                            ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                            : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                         }`}
                       >
                         Yes
@@ -1424,8 +1424,8 @@ function Step5TeachingExperience({ formData, updateField, validationErrors, atte
                         onClick={() => updateExperience(exp.id, 'currentlyWorking', 'No')}
                         className={`px-4 py-2 rounded text-[12px] transition-all ${
                           exp.currentlyWorking === 'No'
-                            ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                            : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                            ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                            : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                         }`}
                       >
                         No
@@ -1674,8 +1674,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => toggleClass(cls)}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   classesHandled.includes(cls)
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 {cls}
@@ -1714,7 +1714,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               </div>
             </>
           ) : (
-            <div className="col-span-2 p-6 bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] rounded-lg text-center">
+            <div className="col-span-2 p-6 bg-[#111111] border border-[rgba(201,169,110,0.1)] rounded-lg text-center">
               <p className="text-[12px] text-[#4A4030]">
                 Please select at least one class to view available subjects
               </p>
@@ -1736,8 +1736,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => setCoaching('Yes')}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   coaching === 'Yes'
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 Yes
@@ -1747,8 +1747,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => setCoaching('No')}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   coaching === 'No'
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 No
@@ -1766,8 +1766,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => setExamInvigilation('Yes')}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   examInvigilation === 'Yes'
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 Yes
@@ -1777,8 +1777,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => setExamInvigilation('No')}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   examInvigilation === 'No'
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 No
@@ -1796,8 +1796,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => setClassTeacherDuty('Yes')}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   classTeacherDuty === 'Yes'
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 Yes
@@ -1807,8 +1807,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                 onClick={() => setClassTeacherDuty('No')}
                 className={`px-4 py-2 rounded text-[12px] transition-all ${
                   classTeacherDuty === 'No'
-                    ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                    : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                    ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                    : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                 }`}
               >
                 No
@@ -1827,8 +1827,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               onClick={() => setCoCurricular('Yes')}
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 coCurricular === 'Yes'
-                  ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                  ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
               }`}
             >
               Yes
@@ -1838,8 +1838,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               onClick={() => setCoCurricular('No')}
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 coCurricular === 'No'
-                  ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                  ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
               }`}
             >
               No
@@ -1860,8 +1860,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               onClick={() => updateField('isLanguageProficient', 'yes')}
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 isLanguageProficient === 'yes'
-                  ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                  ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
               }`}
             >
               Yes
@@ -1872,7 +1872,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 isLanguageProficient === 'no'
                   ? 'bg-[#f85c5c] text-white font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
               }`}
             >
               No
@@ -1973,8 +1973,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               onClick={() => setHasLanguageCertificates(true)}
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 hasLanguageCertificates
-                  ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                  ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
               }`}
             >
               Yes
@@ -1985,7 +1985,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 !hasLanguageCertificates
                   ? 'bg-[#f85c5c] text-white font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
               }`}
             >
               No
@@ -2010,7 +2010,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                     </button>
                   )}
                 </label>
-                <div className="relative flex flex-col items-center justify-center gap-1 w-full px-3 py-2 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A]">
+                <div className="relative flex flex-col items-center justify-center gap-1 w-full px-3 py-2 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111]">
                   <input
                     type="file"
                     accept=".pdf,image/*"
@@ -2023,7 +2023,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                     <button
                       type="button"
                       onClick={addLanguageCertificate}
-                      className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#C9A96E] text-[#030508] flex items-center justify-center text-[16px] font-bold hover:bg-[#B8965A] transition-colors shadow-lg z-20 border-2 border-[rgba(201,169,110,0.2)]"
+                      className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#C9A96E] text-[#0b0b0b] flex items-center justify-center text-[16px] font-bold hover:bg-[#B8965A] transition-colors shadow-lg z-20 border-2 border-[rgba(201,169,110,0.2)]"
                       title="Add Another Certificate"
                     >
                       +
@@ -2048,8 +2048,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               onClick={() => setHasIctSkills(true)}
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 hasIctSkills
-                  ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                  ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
               }`}
             >
               Yes
@@ -2065,7 +2065,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 !hasIctSkills
                   ? 'bg-[#f85c5c] text-white font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
               }`}
             >
               No
@@ -2089,7 +2089,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                     setIctSkillsLevel(e.target.value);
                     setSoftwareSkills([]);
                   }}
-                  className="w-full max-w-[280px] px-3 py-2 bg-[#080D14] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)]"
+                  className="w-full max-w-[280px] px-3 py-2 bg-[#0b0b0b] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)]"
                 >
                   <option value="Select">Select</option>
                   <option value="Basic">Basic</option>
@@ -2169,8 +2169,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                       onClick={() => setHasIctCertificates(true)}
                       className={`px-3 py-1.5 rounded text-[11px] transition-all ${
                         hasIctCertificates
-                          ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                          : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                          ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                          : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
                       }`}
                     >
                       Yes
@@ -2181,7 +2181,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                       className={`px-3 py-1.5 rounded text-[11px] transition-all ${
                         !hasIctCertificates
                           ? 'bg-[#f85c5c] text-white font-medium'
-                          : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                          : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
                       }`}
                     >
                       No
@@ -2207,7 +2207,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                             </button>
                           )}
                         </label>
-                        <div className="relative flex flex-col items-center justify-center gap-1 w-full px-3 py-2 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A]">
+                        <div className="relative flex flex-col items-center justify-center gap-1 w-full px-3 py-2 border-2 border-dashed border-[rgba(201,169,110,0.1)] rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111]">
                           <input
                             type="file"
                             accept=".pdf,image/*"
@@ -2225,7 +2225,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
                                 e.stopPropagation();
                                 addIctCertificate();
                               }}
-                              className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#C9A96E] text-[#030508] flex items-center justify-center text-[16px] font-bold hover:bg-[#B8965A] transition-colors shadow-lg z-20 border-2 border-[rgba(201,169,110,0.2)]"
+                              className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[#C9A96E] text-[#0b0b0b] flex items-center justify-center text-[16px] font-bold hover:bg-[#B8965A] transition-colors shadow-lg z-20 border-2 border-[rgba(201,169,110,0.2)]"
                               title="Add Another Certificate"
                             >
                               +
@@ -2252,8 +2252,8 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               onClick={() => setHasAdditionalSkills(true)}
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 hasAdditionalSkills
-                  ? 'bg-[#C9A96E] text-[#030508] font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                  ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
               }`}
             >
               Yes
@@ -2264,7 +2264,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
               className={`px-4 py-2 rounded text-[12px] transition-all ${
                 !hasAdditionalSkills
                   ? 'bg-[#f85c5c] text-white font-medium'
-                  : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                  : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
               }`}
             >
               No
@@ -2280,7 +2280,7 @@ function Step6SuitabilitySkills({ formData, updateField, validationErrors, attem
             <textarea
               rows={3}
               placeholder="Describe any type of skills (technical, creative, soft skills, hobbies, etc.) that may be relevant..."
-              className="w-full px-3 py-2.5 bg-[#080D14] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-2 focus:ring-[rgba(201,169,110,0.09)] placeholder:text-[#3A3020]"
+              className="w-full px-3 py-2.5 bg-[#0b0b0b] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-2 focus:ring-[rgba(201,169,110,0.09)] placeholder:text-[#3A3020]"
             />
           </div>
         )}
@@ -2302,7 +2302,7 @@ function Step7PersonalBackground({ formData, updateField, validationErrors, atte
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
           <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2">Blood Group · রক্তের গ্রুপ</label>
-          <select value={formData.bloodGroup || ''} onChange={(e) => updateField('bloodGroup', e.target.value)} className="w-full px-3 py-2 bg-[#080D14] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)]">
+          <select value={formData.bloodGroup || ''} onChange={(e) => updateField('bloodGroup', e.target.value)} className="w-full px-3 py-2 bg-[#0b0b0b] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)]">
             <option value="">Select</option><option value="Never checked">Never checked · পরীক্ষা করা হয়নি</option><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="AB+">AB+</option><option value="AB-">AB-</option><option value="O+">O+</option><option value="O-">O-</option>
           </select>
         </div>
@@ -2310,19 +2310,19 @@ function Step7PersonalBackground({ formData, updateField, validationErrors, atte
         <div>
           <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2">Physical Disability · শারীরিক অক্ষমতা <span className="text-[#3A3020]">(Optional)</span></label>
           <div className="flex gap-2">
-            <button type="button" onClick={() => updateField('hasDisability', true)} className={`px-3 py-1.5 rounded text-[11px] transition-all ${formData.hasDisability ? 'bg-[#C9A96E] text-[#030508] font-medium' : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'}`}>Yes</button>
-            <button type="button" onClick={() => { updateField('hasDisability', false); updateField('disabilityDetails', ''); }} className={`px-3 py-1.5 rounded text-[11px] transition-all ${!formData.hasDisability ? 'bg-[#f85c5c] text-white font-medium' : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'}`}>No</button>
+            <button type="button" onClick={() => updateField('hasDisability', true)} className={`px-3 py-1.5 rounded text-[11px] transition-all ${formData.hasDisability ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium' : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'}`}>Yes</button>
+            <button type="button" onClick={() => { updateField('hasDisability', false); updateField('disabilityDetails', ''); }} className={`px-3 py-1.5 rounded text-[11px] transition-all ${!formData.hasDisability ? 'bg-[#f85c5c] text-white font-medium' : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'}`}>No</button>
           </div>
-          {formData.hasDisability && <input type="text" value={formData.disabilityDetails || ''} onChange={(e) => updateField('disabilityDetails', e.target.value)} placeholder="Specify disability" className="w-full mt-2 px-3 py-2 bg-[#080D14] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)] placeholder:text-[#3A3020]" />}
+          {formData.hasDisability && <input type="text" value={formData.disabilityDetails || ''} onChange={(e) => updateField('disabilityDetails', e.target.value)} placeholder="Specify disability" className="w-full mt-2 px-3 py-2 bg-[#0b0b0b] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)] placeholder:text-[#3A3020]" />}
         </div>
 
         <div>
           <label className="block text-[10px] tracking-[0.12em] uppercase text-[#4A4030] mb-2">Relatives in this Institution? · এই প্রতিষ্ঠানে আত্মীয়?</label>
           <div className="flex gap-2">
-            <button type="button" onClick={() => updateField('hasRelatives', true)} className={`px-3 py-1.5 rounded text-[11px] transition-all ${formData.hasRelatives ? 'bg-[#C9A96E] text-[#030508] font-medium' : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'}`}>Yes</button>
-            <button type="button" onClick={() => { updateField('hasRelatives', false); updateField('relativeDetails', ''); }} className={`px-3 py-1.5 rounded text-[11px] transition-all ${!formData.hasRelatives ? 'bg-[#f85c5c] text-white font-medium' : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'}`}>No</button>
+            <button type="button" onClick={() => updateField('hasRelatives', true)} className={`px-3 py-1.5 rounded text-[11px] transition-all ${formData.hasRelatives ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium' : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'}`}>Yes</button>
+            <button type="button" onClick={() => { updateField('hasRelatives', false); updateField('relativeDetails', ''); }} className={`px-3 py-1.5 rounded text-[11px] transition-all ${!formData.hasRelatives ? 'bg-[#f85c5c] text-white font-medium' : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'}`}>No</button>
           </div>
-          {formData.hasRelatives && <input type="text" value={formData.relativeDetails || ''} onChange={(e) => updateField('relativeDetails', e.target.value)} placeholder="Name, Designation, Relation" className="w-full mt-2 px-3 py-2 bg-[#080D14] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)] placeholder:text-[#3A3020]" />}
+          {formData.hasRelatives && <input type="text" value={formData.relativeDetails || ''} onChange={(e) => updateField('relativeDetails', e.target.value)} placeholder="Name, Designation, Relation" className="w-full mt-2 px-3 py-2 bg-[#0b0b0b] border border-[rgba(201,169,110,0.1)] rounded text-[13px] text-[#C8C4BC] font-['DM_Mono'] focus:outline-none focus:border-[rgba(201,169,110,0.55)] focus:ring-1 focus:ring-[rgba(201,169,110,0.09)] placeholder:text-[#3A3020]" />}
         </div>
       </div>
 
@@ -2372,7 +2372,7 @@ function Step8Documents({ formData, updateField, validationErrors, attemptedSubm
               {doc.label} {doc.required && <span className="text-[#f85c5c]">*</span>}
               {doc.sublabel && <><br /><span className="normal-case tracking-normal">{doc.sublabel}</span></>}
             </label>
-            <div className={`relative border-[1.5px] border-dashed rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#0C1119] transition-all bg-[#0A0F1A] ${showError(doc.field) ? 'border-[rgba(248,92,92,0.5)]' : 'border-[rgba(201,169,110,0.1)]'}`}>
+            <div className={`relative border-[1.5px] border-dashed rounded-lg hover:border-[rgba(201,169,110,0.35)] hover:bg-[#161616] transition-all bg-[#111111] ${showError(doc.field) ? 'border-[rgba(248,92,92,0.5)]' : 'border-[rgba(201,169,110,0.1)]'}`}>
               <input
                 type="file"
                 accept={doc.accept}
@@ -2421,8 +2421,8 @@ function Step9References({ formData, updateField, validationErrors, attemptedSub
             onClick={() => updateField('hasReferences', true)}
             className={`px-4 py-2 rounded text-[12px] transition-all ${
               hasReferences 
-                ? 'bg-[#C9A96E] text-[#030508] font-medium' 
-                : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
+                ? 'bg-[#C9A96E] text-[#0b0b0b] font-medium' 
+                : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,169,110,0.45)]'
             }`}
           >
             Yes, I have references
@@ -2433,7 +2433,7 @@ function Step9References({ formData, updateField, validationErrors, attemptedSub
             className={`px-4 py-2 rounded text-[12px] transition-all ${
               !hasReferences 
                 ? 'bg-[#f85c5c] text-white font-medium' 
-                : 'bg-[#0A0F1A] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
+                : 'bg-[#111111] border border-[rgba(201,169,110,0.1)] text-[#5A5650] hover:border-[rgba(201,80,80,0.45)]'
             }`}
           >
             No, I don't have
@@ -2683,7 +2683,7 @@ function Step10Declaration({ formData, updateField, validationErrors, attemptedS
               ref={canvasRef}
               width={400} 
               height={100}
-              className="block w-full h-[100px] bg-[#0A0F1A] cursor-crosshair touch-none"
+              className="block w-full h-[100px] bg-[#111111] cursor-crosshair touch-none"
               onMouseDown={startDrawing}
               onMouseMove={draw}
               onMouseUp={stopDrawing}

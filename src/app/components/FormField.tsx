@@ -77,7 +77,7 @@ export function FormField({
             onBlur={() => setIsFocused(false)}
           >
             {options?.map((option, index) => (
-              <option key={`${option}-${index}`} value={option} className="bg-[#0f1524]">
+              <option key={`${option}-${index}`} value={option} className="bg-[#111111]">
                 {option || '— Select an option —'}
               </option>
             ))}
@@ -130,7 +130,7 @@ export function FormField({
     <div className="space-y-2">
       <label htmlFor={inputId} className="block">
         <span className="text-[9px] tracking-[0.16em] uppercase" style={{
-          color: isFocused ? '#3B82F6' : (value && value !== '') ? '#F59E0B' : '#64748B',
+          color: isFocused ? '#C9A96E' : (value && value !== '') ? '#C9A96E' : '#64748B',
           fontFamily: 'DM Mono, monospace',
           transition: 'color 0.3s',
           opacity: (value && value !== '') ? 1 : 0.9,
@@ -153,20 +153,20 @@ export function FormField({
       <div data-required-target className="relative" style={{
         padding: '1px', borderRadius: '2px',
         background: (isFocused && !hasError)
-          ? 'linear-gradient(135deg, rgba(59,130,246,0.7), rgba(245,158,11,0.15))'
-          : 'rgba(245,158,11,0.12)',
+          ? 'linear-gradient(135deg, rgba(201,169,110,0.7), rgba(201,169,110,0.15))'
+          : 'rgba(201,169,110,0.12)',
         transition: 'all 0.35s ease',
       }}>
         {/* Glow on focus - only when no error */}
         {(isFocused && !hasError) && (
           <div style={{
             position: 'absolute', inset: '-6px', borderRadius: '6px',
-            background: 'radial-gradient(ellipse, rgba(59,130,246,0.15), rgba(245,158,11,0.1), transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(201,169,110,0.15), rgba(201,169,110,0.05), transparent 70%)',
             pointerEvents: 'none',
           }} />
         )}
         {/* Inner surface */}
-        <div style={{ background: '#1E293B', borderRadius: '1px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ background: '#161616', borderRadius: '1px', position: 'relative', overflow: 'hidden' }}>
           {renderInput()}
         </div>
       </div>

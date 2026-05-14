@@ -26,7 +26,7 @@ export function StepTracker({ currentStep, totalSteps, onStepClick }: StepTracke
         marginBottom: '28px',
         padding: '20px 28px',
         borderRadius: '4px',
-        background: 'linear-gradient(180deg, #0A0F1A 0%, #080D14 100%)',
+        background: 'linear-gradient(180deg, #111111 0%, #0b0b0b 100%)',
         border: '1px solid rgba(201,169,110,0.12)',
         borderTop: '1px solid rgba(201,169,110,0.2)',
         boxShadow: '0 12px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,169,110,0.06)',
@@ -60,8 +60,8 @@ export function StepTracker({ currentStep, totalSteps, onStepClick }: StepTracke
                     ? 'linear-gradient(135deg, #C9A96E 0%, #B8965A 100%)'
                     : isActive
                     ? 'rgba(201,169,110,0.1)'
-                    : '#080D14',
-                  color: isCompleted ? '#030508' : isActive ? '#C9A96E' : '#3A3830',
+                    : '#111111',
+                  color: isCompleted ? '#0b0b0b' : isActive ? '#C9A96E' : '#3A3830',
                   boxShadow: isActive
                     ? '0 0 20px rgba(201,169,110,0.2), inset 0 1px 0 rgba(201,169,110,0.1)'
                     : isCompleted
@@ -70,7 +70,7 @@ export function StepTracker({ currentStep, totalSteps, onStepClick }: StepTracke
                 }}>
                   {isCompleted ? (
                     <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
-                      <path d="M1 4.5l3 3 6-7" stroke="#030508" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M1 4.5l3 3 6-7" stroke="#0b0b0b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   ) : <span>{step.num}</span>}
                 </div>
