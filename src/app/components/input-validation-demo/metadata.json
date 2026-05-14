@@ -1,0 +1,5 @@
+{
+  "name": "Input Validation Demo",
+  "description": "A simple React app demonstrating input field validation with a required label.",
+  "requestFramePermissions": []
+}
